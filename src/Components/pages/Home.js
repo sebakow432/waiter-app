@@ -1,12 +1,19 @@
 import ListGroup from 'react-bootstrap/ListGroup';
-import { Stack, Button } from 'react-bootstrap';
+import { Stack, Button, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { getAllTables } from '../../Redux/tablesRedux';
 import { useSelector } from 'react-redux';
 
-
 const Home = () => {
   const tables = useSelector(getAllTables);
+
+  if (!tables) {
+    return (
+      <Spinner animation="border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>
+    );
+  }
 
   return(
       <div>

@@ -2,10 +2,10 @@
   "tables": [
     {
       "id": "1",
+      "status": "Reserved",
       "peopleAmount": 0,
-      "bill": 0,
-      "maxPeople": 0,
-      "status": "Free"
+      "maxPeopleAmount": 0,
+      "bill": 0
     },
     {
       "id": "2",
@@ -16,10 +16,10 @@
     },
     {
       "id": "3",
+      "status": "Busy",
       "peopleAmount": 0,
-      "bill": 0,
-      "maxPeople": 0,
-      "status": "Free"
+      "maxPeopleAmount": 0,
+      "bill": 0
     },
     {
       "id": "4",

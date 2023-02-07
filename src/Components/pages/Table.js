@@ -25,7 +25,7 @@ const Table = () => {
   ];
 
   const navigate = useNavigate();
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
 
   
 
@@ -54,11 +54,17 @@ const Table = () => {
       bill: parseInt(bill)
     };
     console.log(data);
-    //dispatch(updateTableRequest(data)); <------ Here's problem!
-    navigate("/");
+    dispatch(updateTableRequest(data)); //<------ Here's problem!
+    navigate('/');
   };
 
   if (!table) return <Navigate to="/" />;
+
+  
+  if(isNaN(maxPeopleAmount)){
+    setMaxPeopleAmount(0);
+  }
+  
   return (
     <div>
       <h1 className="my-4">Table {table.id}</h1>
@@ -98,7 +104,7 @@ const Table = () => {
                 type="number" 
                 min="0" 
                 max="10" 
-                value={maxPeopleAmount || " "}
+                value={maxPeopleAmount}
                 onChange={(e) => setMaxPeopleAmount(Number(e.target.value))}
               />
             </Col>
